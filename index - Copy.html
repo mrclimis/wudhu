@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panduan Tata Cara Berwudhu</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 20px;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .niat-section {
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .niat-section h2 {
+            font-size: 28px;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        .niat-text {
+            font-size: 24px;
+            text-align: center;
+            margin: 15px 0;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .latin-text {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.8;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .step-card {
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .step-number {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .step-illustration {
+            width: 100%;
+            height: 200px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative; /* Penting untuk penempatan overlay */
+        }
+
+        /* Modifikasi untuk memastikan illustration mencakup video/konten */
+        .step-card:has(.step-video-player) .step-illustration {
+            height: 200px; /* Pertahankan tinggi yang sama */
+            padding: 0; /* Hapus padding jika ada */
+            margin: 0;
+            overflow: hidden; /* Pastikan video tidak meluap */
+        }
+
+        .step-video-player {
+            width: 100%;
+            height: 100%; /* Agar video mengisi area div */
+            object-fit: cover; /* Agar video menutupi area tanpa terdistorsi */
+            border-radius: 20px; /* Sesuaikan dengan border-radius kartu */
+        }
+
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .video-play-overlay:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .play-icon svg {
+            fill: #4CAF50; /* Warna ikon play */
+            margin-left: 5px; /* Sedikit geser agar terlihat di tengah */
+        }
+
+        .step-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .step-arabic {
+            font-size: 20px;
+            text-align: center;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .step-latin {
+            font-size: 16px;
+            font-style: italic;
+            opacity: 0.7;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .doa-section {
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .doa-section h2 {
+            font-size: 28px;
+            margin: 0 0 25px 0;
+            text-align: center;
+        }
+
+        .doa-text {
+            font-size: 22px;
+            text-align: center;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 16px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header p {
+                font-size: 18px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+		
+		.audio-btn {
+			background-color: #A3B18A;
+			color: white;
+			border: none;
+			padding: 12px 20px;
+			border-radius: 50px;
+			cursor: pointer;
+			font-size: 15px;
+			margin: 10px auto;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			justify-content: center;
+			transition: 0.25s ease;
+			font-weight: 600;
+		}
+
+		.audio-btn:hover {
+			background-color: #8E9F7A;
+			transform: scale(1.05);
+		}
+
+		.audio-icon {
+			width: 18px;
+			height: 18px;
+			transition: transform 0.25s;
+		}
+
+		.audio-btn.playing .audio-icon {
+			transform: rotate(180deg);
+		}
+
+
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <h1 id="main-title">Panduan Tata Cara Berwudhu</h1>
+    <p id="subtitle">Panduan lengkap dengan video animasi, lafal dan doa</p>
+   </div>
+   <div class="niat-section">
+    <h2>Niat Wudhu</h2>
+    <div class="niat-text">
+     نَوَيْتُ الْوُضُوْءَ لِرَفْعِ الْحَدَثِ اْلاَصْغَرِ فَرْضًا ِللهِ تَعَالَى
+    </div>
+    <div class="latin-text">
+     "Nawaitul whudu-a lirof'il hadatsii ashghori fardhol lillahi ta'ala"
+    </div>
+    <p style="text-align: center; margin-top: 20px; font-size: 16px; opacity: 0.8;">
+	Artinya: "Saya niat berwudhu untuk menghilangkan hadats kecil, fardhu karena Allah Ta'ala"
+	</p>
+
+	<button class="audio-btn" onclick="toggleAudio('audioNiat', this)">
+    <svg class="audio-icon" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z" fill="white"></path>
+    </svg>
+    Dengarkan Niat
+	</button>
+
+
+	<audio id="audioNiat">
+		<source src="media/0DoaSebelumWudhu.mp3" type="audio/mp3">
+	</audio>
+
+   </div>
+	   <div class="steps-grid" id="steps-container"></div>
+	   <div class="doa-section">
+		<h2>Doa Setelah Wudhu</h2>
+
+		<div class="doa-text">
+			أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُ
+		</div>
+		<div class="latin-text">
+			"Asyhadu allaa ilaaha illallah wahdahu laa syarikalahu wa asyhadu anna muhammadan 'abduhu wa rasuuluh"
+		</div>
+		<p style="text-align: center; margin-top: 20px; font-size: 16px; opacity: 0.8;">
+			Artinya: "Aku bersaksi, tidak ada Tuhan selain Allah Yang Maha Esa, tidak ada sekutu bagi-Nya, 
+			dan aku mengaku bahwa Muhammad itu adalah hamba dan Rasul-Nya"
+		</p>
+
+		<div class="doa-text" style="margin-top: 25px;">		
+			اللَّهُمَّ اجْعَلْنِى مِنَ التَّوَّابِينَ وَاجْعَلْنِى مِنَ الْمُتَطَهِّرِينَ وَاجْعَلْنِى مِنْ عِبَادِكَ الصَّالِحِينَ
+		</div>
+		<div class="latin-text">
+			"Allaahummaj'alni minat-tawwabina waj'alni minal mutathahirin, waj'alni min 'ibadikas-sholihin"
+		</div>
+		<p style="text-align: center; margin-top: 20px; font-size: 16px; opacity: 0.8;">
+			Artinya: "Ya Allah, jadikanlah aku termasuk orang yang bertaubat dan jadikanlah aku termasuk orang yang menyucikan diri dan jadikanlah aku dari golongan orang-orang yang saleh"
+		</p>
+
+		<!-- ⬇️ TOMBOL AUDIO SEKARANG DI DALAM FRAME -->
+		<button class="audio-btn" onclick="toggleAudio('audioDoa', this)">
+			<svg class="audio-icon" viewBox="0 0 24 24">
+				<path d="M8 5v14l11-7z" fill="white"></path>
+			</svg>
+			Dengarkan Doa
+		</button>
+
+		<audio id="audioDoa">
+			<source src="media/0DoaSesudahWudhu.mp3" type="audio/mp3">
+		</audio>
+		<!-- ⬆️ END TOMBOL AUDIO -->
+	</div>
+
+
+   <div class="footer" id="footer-text">
+    Semoga bermanfaat untuk ibadah kita 🤲
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            main_title: "Panduan Tata Cara Berwudhu",
+            subtitle: "Panduan lengkap dengan lafal dan doa",
+            footer_text: "Semoga bermanfaat untuk ibadah kita 🤲",
+            background_color: "#E8F5E9",
+            card_color: "#FFFFFF",
+            text_color: "#1B5E20",
+            primary_button_color: "#4CAF50",
+            accent_color: "#81C784",
+            font_family: "Segoe UI",
+            font_size: 16
+        };
+
+        const wudhuSteps = [
+            {
+                number: 1,
+                title: "Membasuh Telapak Tangan",
+                arabic: "",
+                latin: "Membasuh kedua telapak tangan sambil membaca Bismillahirrohmaanirrohiim",
+                illustration: `
+                    <video id="video-step-1" class="step-video-player" poster="media/1cucitangan.jpg" muted loop>
+                        <source src="media/1cucitangan.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-1">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 2,
+                title: "Berkumur-kumur",
+                arabic: "",
+                latin: "Berkumur 3 kali",
+                illustration: `
+                    <video id="video-step-2" class="step-video-player" poster="media/2berkumur.jpg" muted loop>
+                        <source src="media/2berkumur.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-2">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 3,
+                title: "Membersihkan Hidung",
+                arabic: "",
+                latin: "Menghirup air ke dalam hidung (istinsyaq) 3 kali",
+                illustration: `
+                    <video id="video-step-3" class="step-video-player" poster="media/3bersihhidung.jpg" muted loop>
+                        <source src="media/3bersihhidung.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-3">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 4,
+                title: "Membasuh Muka",
+                arabic: "",
+                latin: "Membasuh wajah 3 kali",
+                illustration: `
+                    <video id="video-step-4" class="step-video-player" poster="media/4basuhmuka.jpg" muted loop>
+                        <source src="media/4basuhmuka.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-4">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 5,
+                title: "Membasuh Tangan Kanan",
+                arabic: "",
+                latin: "Membasuh tangan kanan hingga siku 3 kali",
+                illustration: `
+                    <video id="video-step-5" class="step-video-player" poster="media/5basuhtangankanan.jpg" muted loop>
+                        <source src="media/5basuhtangankanan.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-5">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 6,
+                title: "Membasuh Tangan Kiri",
+                arabic: "",
+                latin: "Membasuh tangan kiri hingga siku 3 kali",
+                illustration: `
+                    <video id="video-step-6" class="step-video-player" poster="media/6basuhtangankiri.jpg" muted loop>
+                        <source src="media/6basuhtangankiri.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-6">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 7,
+                title: "Mengusap Kepala",
+                arabic: "",
+                latin: "Mengusap sebagian kulit kepala dengan air 3 kali",
+                illustration: `
+                    <video id="video-step-7" class="step-video-player" poster="media/7usapkepala.jpg" muted loop>
+                        <source src="media/7usapkepala.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-7">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 8,
+                title: "Mengusap Telinga",
+                arabic: "",
+                latin: "Membersihkan kedua telinga (Kanan dan Kiri) 3 kali",
+                illustration: `
+                    <video id="video-step-8" class="step-video-player" poster="media/8usaptelinga.jpg" muted loop>
+                        <source src="media/8usaptelinga.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-8">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                number: 9,
+                title: "Membasuh Kaki Kanan & Kiri",
+                arabic: "",
+                latin: "Membasuh kedua kaki (Kanan & Kiri) hingga mata kaki",
+                illustration: `
+                    <video id="video-step-9" class="step-video-player" poster="media/9basuhkakikanan.jpg" muted loop>
+                        <source src="media/9basuhkakikanan.mp4" type="video/mp4">
+                        Maaf, browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="video-play-overlay" id="overlay-step-9">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        function renderSteps() {
+            const container = document.getElementById('steps-container');
+            container.innerHTML = '';
+
+            wudhuSteps.forEach(step => {
+                const card = document.createElement('div');
+                card.className = 'step-card';
+                card.style.backgroundColor = defaultConfig.card_color;
+                
+                card.innerHTML = `
+                    <div class="step-number" style="color: ${defaultConfig.text_color}">Langkah ${step.number}</div>
+                    <div class="step-illustration">${step.illustration}</div>
+                    <div class="step-title" style="color: ${defaultConfig.text_color}">${step.title}</div>
+                    ${step.arabic ? `<div class="step-arabic" style="color: ${defaultConfig.text_color}">${step.arabic}</div>` : ''}
+                    ${step.latin ? `<div class="step-latin" style="color: ${defaultConfig.text_color}">${step.latin}</div>` : ''}
+                `;
+
+                card.addEventListener('click', (e) => {
+                    // Hanya tampilkan notifikasi jika tidak ada video, atau klik bukan dari overlay
+                    if (!card.querySelector('.step-video-player') || e.target.closest('.video-play-overlay')) {
+                        showNotification(`${step.number}: ${step.title}`);
+                    }
+                });
+
+                container.appendChild(card);
+            });
+
+            // --- Logika Baru untuk Memutar Video pada SEMUA Langkah ---
+            document.querySelectorAll('.step-video-player').forEach(videoElement => {
+                const stepNumber = videoElement.id.split('-')[2];
+                const overlayElement = document.getElementById(`overlay-step-${stepNumber}`);
+                
+                if (videoElement && overlayElement) {
+                    overlayElement.addEventListener('click', () => {
+                        // Jeda semua video lain yang sedang diputar
+                        document.querySelectorAll('.step-video-player').forEach(v => {
+                            if (v !== videoElement && !v.paused) {
+                                v.pause();
+                                const otherOverlay = document.getElementById(`overlay-step-${v.id.split('-')[2]}`);
+                                if (otherOverlay) otherOverlay.style.display = 'flex';
+                            }
+                        });
+
+                        if (videoElement.paused || videoElement.ended) {
+                            // Putar video
+                            videoElement.play().catch(error => {
+                                console.error(`Gagal memutar video langkah ${stepNumber}:`, error);
+                                showNotification("Gagal memutar video. Coba lagi.");
+                            });
+                            // Sembunyikan overlay
+                            overlayElement.style.display = 'none';
+                        } else {
+                            // Jeda video
+                            videoElement.pause();
+                            // Tampilkan overlay
+                            overlayElement.style.display = 'flex';
+                        }
+                    });
+
+                    // Jika video selesai, jeda dan tampilkan overlay lagi
+                    videoElement.addEventListener('ended', () => {
+                        videoElement.currentTime = 0; // Kembali ke awal
+                        overlayElement.style.display = 'flex';
+                    });
+                }
+            });
+            // --------------------------------------------------------
+        }
+
+        function showNotification(message) {
+            const existingToast = document.querySelector('.toast-notification');
+            if (existingToast) {
+                existingToast.remove();
+            }
+
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${defaultConfig.primary_button_color};
+                color: white;
+                padding: 15px 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-size: ${defaultConfig.font_size}px;
+                font-family: ${defaultConfig.font_family}, Arial, sans-serif;
+                animation: slideDown 0.3s ease;
+            `;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = 'slideUp 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideDown {
+                from {
+                    transform: translateX(-50%) translateY(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(-50%) translateY(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideUp {
+                from {
+                    transform: translateX(-50%) translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(-50%) translateY(-100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        async function onConfigChange(config) {
+            const baseFontSize = config.font_size || defaultConfig.font_size;
+            const customFont = config.font_family || defaultConfig.font_family;
+            const fontStack = `${customFont}, Segoe UI, Tahoma, Geneva, Verdana, sans-serif`;
+
+            document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+            document.body.style.fontFamily = fontStack;
+
+            const mainTitle = document.getElementById('main-title');
+            mainTitle.textContent = config.main_title || defaultConfig.main_title;
+            mainTitle.style.color = config.text_color || defaultConfig.text_color;
+            mainTitle.style.fontSize = `${baseFontSize * 3}px`;
+            mainTitle.style.fontFamily = fontStack;
+
+            const subtitle = document.getElementById('subtitle');
+            subtitle.textContent = config.subtitle || defaultConfig.subtitle;
+            subtitle.style.color = config.text_color || defaultConfig.text_color;
+            subtitle.style.fontSize = `${baseFontSize * 1.25}px`;
+            subtitle.style.fontFamily = fontStack;
+
+            const footerText = document.getElementById('footer-text');
+            footerText.textContent = config.footer_text || defaultConfig.footer_text;
+            footerText.style.color = config.text_color || defaultConfig.text_color;
+            footerText.style.fontSize = `${baseFontSize}px`;
+            footerText.style.fontFamily = fontStack;
+
+            const niatSection = document.querySelector('.niat-section');
+            niatSection.style.backgroundColor = config.card_color || defaultConfig.card_color;
+
+            const niatTitle = niatSection.querySelector('h2');
+            niatTitle.style.color = config.text_color || defaultConfig.text_color;
+            niatTitle.style.fontSize = `${baseFontSize * 1.75}px`;
+            niatTitle.style.fontFamily = fontStack;
+
+            const niatTexts = niatSection.querySelectorAll('.niat-text, .latin-text, p');
+            niatTexts.forEach(text => {
+                text.style.color = config.text_color || defaultConfig.text_color;
+                text.style.fontFamily = fontStack;
+            });
+
+            const doaSection = document.querySelector('.doa-section');
+            doaSection.style.backgroundColor = config.card_color || defaultConfig.card_color;
+
+            const doaTitle = doaSection.querySelector('h2');
+            doaTitle.style.color = config.text_color || defaultConfig.text_color;
+            doaTitle.style.fontSize = `${baseFontSize * 1.75}px`;
+            doaTitle.style.fontFamily = fontStack;
+
+            const doaTexts = doaSection.querySelectorAll('.doa-text, .latin-text, p');
+            doaTexts.forEach(text => {
+                text.style.color = config.text_color || defaultConfig.text_color;
+                text.style.fontFamily = fontStack;
+            });
+
+            const stepCards = document.querySelectorAll('.step-card');
+            stepCards.forEach(card => {
+                card.style.backgroundColor = config.card_color || defaultConfig.card_color;
+                const allText = card.querySelectorAll('.step-number, .step-title, .step-arabic, .step-latin');
+                allText.forEach(el => {
+                    el.style.color = config.text_color || defaultConfig.text_color;
+                    el.style.fontFamily = fontStack;
+                });
+            });
+            
+            // Perbarui warna ikon play overlay
+            const playIcon = document.querySelector('.play-icon svg path');
+            if (playIcon) {
+                playIcon.style.fill = config.primary_button_color || defaultConfig.primary_button_color;
+            }
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.card_color || defaultConfig.card_color,
+                            set: (value) => {
+                                config.card_color = value;
+                                window.elementSdk.setConfig({ card_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.primary_button_color || defaultConfig.primary_button_color,
+                            set: (value) => {
+                                config.primary_button_color = value;
+                                window.elementSdk.setConfig({ primary_button_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.accent_color || defaultConfig.accent_color,
+                            set: (value) => {
+                                config.accent_color = value;
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: {
+                        get: () => config.font_family || defaultConfig.font_family,
+                        set: (value) => {
+                            config.font_family = value;
+                            window.elementSdk.setConfig({ font_family: value });
+                        }
+                    },
+                    fontSizeable: {
+                        get: () => config.font_size || defaultConfig.font_size,
+                        set: (value) => {
+                            config.font_size = value;
+                            window.elementSdk.setConfig({ font_size: value });
+                        }
+                    }
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["main_title", config.main_title || defaultConfig.main_title],
+                    ["subtitle", config.subtitle || defaultConfig.subtitle],
+                    ["footer_text", config.footer_text || defaultConfig.footer_text]
+                ])
+            });
+        }
+
+        renderSteps();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.elementSdk) {
+                onConfigChange(window.elementSdk.config);
+            }
+        });
+		
+		function toggleAudio(id, btn) {
+		const audio = document.getElementById(id);
+		const isPlaying = !audio.paused;
+
+		// Hentikan semua audio lain
+		document.querySelectorAll("audio").forEach(a => {
+			if (a !== audio) a.pause();
+		});
+
+		// Reset semua tombol menjadi ikon PLAY
+		document.querySelectorAll(".audio-btn").forEach(b => b.classList.remove("playing"));
+
+		if (!isPlaying) {
+			audio.play();
+			btn.classList.add("playing");
+
+			// Ganti ikon menjadi pause
+			btn.querySelector(".audio-icon").innerHTML = `
+				<rect x="6" y="5" width="4" height="14" fill="white"></rect>
+				<rect x="14" y="5" width="4" height="14" fill="white"></rect>
+			`;
+		} else {
+			audio.pause();
+			btn.classList.remove("playing");
+
+			// Kembali ke ikon play
+			btn.querySelector(".audio-icon").innerHTML = `
+				<path d="M8 5v14l11-7z" fill="white"></path>
+			`;
+		}
+
+		// Jika audio selesai → reset tombol
+		audio.onended = () => {
+			btn.classList.remove("playing");
+			btn.querySelector(".audio-icon").innerHTML = `
+				<path d="M8 5v14l11-7z" fill="white"></path>
+			`;
+		};
+	}
+
+
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a0f6444d79af4ec',t:'MTc2MzU1MTk5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
